@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <style>
+            table, th, td {
+                border:1px solid black;
+            }
+        </style>
         <title > My first html code </title>
     </head>
     <body>
@@ -18,7 +23,65 @@
             <li>Nagarjuna sagar</li>
             <li>Neckalce road</li>
         </ul>
+        <hr>
+        <h3> Famous drinks available in Arby's  </h3>
+        <table>
+            <tr>
+                <th> Drinks </th>
+                <th> Location </th>
+                <th> Price </th>
+            </tr>
+            <tr>
+                <td> Pepsi </td>
+                <td> Arbys's </td>
+                <td> 4$ </td>
+            </tr>
+            <tr>
+                <td> Diet coke  </td>
+                <td> Arby's </td>
+                <td> 2$</td>
+            </tr>
+            <tr>
+                <td> Lemonade </td>
+                <td> Arby's </td>
+                <td> 1.5$</td>
+            </tr>
+        </table>
      </body>
-     <a href="aboutme.html" >M super power</a>
+     <a href="aboutme.html" >my super power </a>
+     <hr>
+     <h3> Code display of Finding the equation of line for a segment </h3>
+     <blockquote >
+        Klee’s rule finds a union of line segments lying horizontally. OR total length lined by horizontal line segments once seen vertically. The rule was planned by Paul Klee in 1977.
+    <a href ="https://www.webmath.com/equline1.html"> defination link </a>
+    </blockquote>
+    <pre>
+        int length_union(const vector<pair<int, int>> &a) {
+            int n = a.size();
+            vector<pair<int, bool>> x(n*2);
+            for (int i = 0; i < n; i++) {
+                x[i*2] = {a[i].first, false};
+                x[i*2+1] = {a[i].second, true};
+            }
+        
+            sort(x.begin(), x.end());
+        
+            int result = 0;
+            int c = 0;
+            for (int i = 0; i < n * 2; i++) {
+                if (i > 0 && x[i].first > x[i-1].first && c > 0)
+                    result += x[i].first - x[i-1].first;
+                if (x[i].second)
+                    c--;
+                else
+                    c++;
+            }
+            return result;
+        }
+    </pre>
+    <a href="https://cp-algorithms.com/geometry/length-of-segments-union.html"> code link </a>
+
+    <br>
+    <a href="aboutme.html" >my super power </a>
 
   </html>
